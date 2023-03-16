@@ -33,17 +33,18 @@
             this.button7 = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnProductForm = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.buttonAdd = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
-            this.usernameTb = new System.Windows.Forms.TextBox();
+            this.categoryNameTB = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.categoriesList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonRefresh = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.categoriesList)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -110,53 +111,57 @@
             this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button5.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProductForm
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(50, 199);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Produits";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnProductForm.FlatAppearance.BorderSize = 0;
+            this.btnProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductForm.Location = new System.Drawing.Point(50, 199);
+            this.btnProductForm.Name = "btnProductForm";
+            this.btnProductForm.Size = new System.Drawing.Size(104, 23);
+            this.btnProductForm.TabIndex = 0;
+            this.btnProductForm.Text = "Produits";
+            this.btnProductForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductForm.UseVisualStyleBackColor = true;
+            this.btnProductForm.Click += new System.EventHandler(this.btnProductForm_Click);
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(801, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 28);
-            this.button3.TabIndex = 37;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(801, 160);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 28);
+            this.btnDelete.TabIndex = 37;
+            this.btnDelete.Text = "Supprimer";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(458, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 28);
-            this.button2.TabIndex = 36;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(458, 160);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(125, 28);
+            this.btnEdit.TabIndex = 36;
+            this.btnEdit.Text = "Modifier";
+            this.btnEdit.UseVisualStyleBackColor = false;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
-            // button1
+            // buttonAdd
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(630, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 28);
-            this.button1.TabIndex = 35;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = false;
+            this.buttonAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonAdd.FlatAppearance.BorderSize = 0;
+            this.buttonAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonAdd.Location = new System.Drawing.Point(630, 160);
+            this.buttonAdd.Name = "buttonAdd";
+            this.buttonAdd.Size = new System.Drawing.Size(125, 28);
+            this.buttonAdd.TabIndex = 35;
+            this.buttonAdd.Text = "Ajouter";
+            this.buttonAdd.UseVisualStyleBackColor = false;
+            this.buttonAdd.Click += new System.EventHandler(this.button1_Click);
             // 
             // label3
             // 
@@ -167,12 +172,12 @@
             this.label3.TabIndex = 26;
             this.label3.Text = "Nom de la catégorie";
             // 
-            // usernameTb
+            // categoryNameTB
             // 
-            this.usernameTb.Location = new System.Drawing.Point(547, 97);
-            this.usernameTb.Name = "usernameTb";
-            this.usernameTb.Size = new System.Drawing.Size(261, 27);
-            this.usernameTb.TabIndex = 25;
+            this.categoryNameTB.Location = new System.Drawing.Point(547, 97);
+            this.categoryNameTB.Name = "categoryNameTB";
+            this.categoryNameTB.Size = new System.Drawing.Size(261, 27);
+            this.categoryNameTB.TabIndex = 25;
             // 
             // label2
             // 
@@ -222,7 +227,7 @@
             this.panel1.Controls.Add(this.button7);
             this.panel1.Controls.Add(this.button6);
             this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnProductForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -230,17 +235,30 @@
             this.panel1.Size = new System.Drawing.Size(233, 617);
             this.panel1.TabIndex = 21;
             // 
+            // buttonRefresh
+            // 
+            this.buttonRefresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.buttonRefresh.FlatAppearance.BorderSize = 0;
+            this.buttonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.buttonRefresh.Location = new System.Drawing.Point(994, 248);
+            this.buttonRefresh.Name = "buttonRefresh";
+            this.buttonRefresh.Size = new System.Drawing.Size(78, 28);
+            this.buttonRefresh.TabIndex = 41;
+            this.buttonRefresh.Text = "Trier";
+            this.buttonRefresh.UseVisualStyleBackColor = false;
+            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 617);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.buttonRefresh);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.buttonAdd);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.usernameTb);
+            this.Controls.Add(this.categoryNameTB);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.categoriesList);
             this.Controls.Add(this.panel2);
@@ -267,16 +285,17 @@
         private Button button7;
         private Button button6;
         private Button button5;
-        private Button button4;
-        private Button button3;
-        private Button button2;
-        private Button button1;
+        private Button btnProductForm;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Button buttonAdd;
         private Label label3;
-        private TextBox usernameTb;
+        private TextBox categoryNameTB;
         private Label label2;
         private DataGridView categoriesList;
         private Label label1;
         private Panel panel2;
         private Panel panel1;
+        private Button buttonRefresh;
     }
 }

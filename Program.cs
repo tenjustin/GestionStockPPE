@@ -13,5 +13,10 @@ namespace GestionStock
             ApplicationConfiguration.Initialize();
             Application.Run(new CategoryForm());
         }
+
+        public static void RunForm(Form form)
+        {
+            Application.Run(form);
+        }
     }
 }
