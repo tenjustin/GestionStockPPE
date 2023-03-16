@@ -40,11 +40,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.usernameTb = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.categoriesList = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesList)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -183,14 +183,14 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Catégories";
             // 
-            // dataGridView1
+            // categoriesList
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(261, 282);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 323);
-            this.dataGridView1.TabIndex = 23;
+            this.categoriesList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.categoriesList.Location = new System.Drawing.Point(261, 282);
+            this.categoriesList.Name = "categoriesList";
+            this.categoriesList.RowTemplate.Height = 25;
+            this.categoriesList.Size = new System.Drawing.Size(811, 323);
+            this.categoriesList.TabIndex = 23;
             // 
             // label1
             // 
@@ -242,16 +242,16 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.usernameTb);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.categoriesList);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Roboto", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "CategoryForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "CategoryForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoriesList)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -274,7 +274,7 @@
         private Label label3;
         private TextBox usernameTb;
         private Label label2;
-        private DataGridView dataGridView1;
+        private DataGridView categoriesList;
         private Label label1;
         private Panel panel2;
         private Panel panel1;

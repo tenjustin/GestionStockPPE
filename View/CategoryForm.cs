@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GestionStock.DAL;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +13,14 @@ namespace GestionStock
 {
     public partial class CategoryForm : Form
     {
+        DBInit Con;
+        DBCategories dbc;
         public CategoryForm()
         {
             InitializeComponent();
+            Con = new DBInit();
+            dbc = new DBCategories();
+            categoriesList.DataSource = dbc.SelectAllCategories();
         }
     }
 }
