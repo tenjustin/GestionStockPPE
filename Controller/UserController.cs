@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using GestionStock.Model;
+using GestionStock.DAL;
 
 namespace GestionStock.Controller
 {
@@ -15,7 +16,7 @@ namespace GestionStock.Controller
         {
             DataTable users = new DataTable();
 
-            using (SqlConnection connection = new SqlConnection("connectionString"))
+            using (SqlConnection connection = new DBConnexion().GetConnection())
             {
                 string query = "SELECT id, username, password, role_id FROM users";
                 SqlCommand command = new SqlCommand(query, connection);
@@ -29,7 +30,7 @@ namespace GestionStock.Controller
 
         public void AddUser(User user)
         {
-            using (SqlConnection connection = new SqlConnection("connectionString"))
+            using (SqlConnection connection = new DBConnexion().GetConnection())
             {
                 string query = "INSERT INTO users (username, password, role_id) VALUES (@Username, @Password, @RoleId)";
                 SqlCommand command = new SqlCommand(query, connection);
@@ -42,6 +43,21 @@ namespace GestionStock.Controller
             }
         }
 
+        public bool DeleteUserById(int userId)
+        {
+            using (SqlConnection connection = new DBConnexion().GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("DELETE FROM dbo.users WHERE id = @userId", connection))
+                {
+                    command.Parameters.AddWithValue("@userId", userId);
+
+                    int rowsAffected = command.ExecuteNonQuery();
+                    return rowsAffected > 0;
+                }
+            }
+        }
     }
 
 }

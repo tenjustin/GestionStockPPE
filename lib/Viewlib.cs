@@ -38,5 +38,12 @@ namespace GestionStock.lib
             DataTable productTable = productController.TableAllProducts();
             dataGridView.DataSource = productTable;
         }
+
+        public void RefreshDataGridUser(DataGridView dataGridView)
+        {
+            UserController userController = new UserController();
+            DataTable userTable = userController.TableAllUsers();
+            dataGridView.DataSource = userTable;
+        }
     }
 }

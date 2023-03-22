@@ -1,4 +1,6 @@
-﻿using System;
+﻿using GestionStock.DAL;
+using GestionStock.Model;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace GestionStock.Controller
         {
             List<string> roleNames = new List<string>();
 
-            using (SqlConnection connection = new SqlConnection("connectionString"))
+            using (SqlConnection connection = new DBConnexion().GetConnection())
             {
                 SqlCommand command = new SqlCommand("SELECT Name FROM Roles", connection);
 
@@ -31,5 +33,29 @@ namespace GestionStock.Controller
             return roleNames;
         }
 
+        public Role GetRoleByName(string roleName)
+        {
+            Role role = null;
+
+            using (SqlConnection connection = new DBConnexion().GetConnection())
+            {
+                connection.Open();
+
+                using (SqlCommand command = new SqlCommand("SELECT * FROM dbo.roles WHERE name = @roleName", connection))
+                {
+                    command.Parameters.AddWithValue("@roleName", roleName);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            role = new Role(reader.GetInt32(0), reader.GetString(1));
+                        }
+                    }
+                }
+            }
+
+            return role;
+        }
     }
 }

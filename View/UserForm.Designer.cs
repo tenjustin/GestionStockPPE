@@ -77,6 +77,7 @@
             this.btnUserForm.Text = "Utilisateurs";
             this.btnUserForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUserForm.UseVisualStyleBackColor = true;
+            this.btnUserForm.Click += new System.EventHandler(this.btnUserForm_Click);
             // 
             // btnOrderForm
             // 
@@ -89,6 +90,7 @@
             this.btnOrderForm.Text = "Commandes";
             this.btnOrderForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnOrderForm.UseVisualStyleBackColor = true;
+            this.btnOrderForm.Click += new System.EventHandler(this.btnOrderForm_Click);
             // 
             // btnSupplierForm
             // 
@@ -101,6 +103,7 @@
             this.btnSupplierForm.Text = "Fournisseurs";
             this.btnSupplierForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSupplierForm.UseVisualStyleBackColor = true;
+            this.btnSupplierForm.Click += new System.EventHandler(this.btnSupplierForm_Click);
             // 
             // btnCategForm
             // 
@@ -113,6 +116,7 @@
             this.btnCategForm.Text = "Catégories";
             this.btnCategForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCategForm.UseVisualStyleBackColor = true;
+            this.btnCategForm.Click += new System.EventHandler(this.btnCategForm_Click);
             // 
             // btnProductForm
             // 
@@ -125,6 +129,7 @@
             this.btnProductForm.Text = "Produits";
             this.btnProductForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProductForm.UseVisualStyleBackColor = true;
+            this.btnProductForm.Click += new System.EventHandler(this.btnProductForm_Click);
             // 
             // label5
             // 
@@ -146,6 +151,7 @@
             this.btnDelete.TabIndex = 71;
             this.btnDelete.Text = "Supprimer";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnEdit
             // 
@@ -170,6 +176,7 @@
             this.btnAdd.TabIndex = 69;
             this.btnAdd.Text = "Ajouter";
             this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // passwordTB
             // 
