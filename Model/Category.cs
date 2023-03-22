@@ -2,8 +2,8 @@
 {
     internal class Category
     {
-        private int id { get; set; }
-        private string name { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
 
         public Category(string name)
         {

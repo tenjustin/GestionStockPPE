@@ -2,7 +2,7 @@
 {
     internal class Role
     {
-        private int id { get; set; }
+        public int id { get; set; }
         private string name { get; set; }
 
         public Role(string name)

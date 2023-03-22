@@ -2,10 +2,10 @@
 {
     internal class Supplier
     {
-        private int id { get; set; }
-        private string name { get; set; }
-        private string address { get; set; }
-        private string phone_number { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public string address { get; set; }
+        public string phone_number { get; set; }
 
         public Supplier(string name, string address, string phone_number)
         {

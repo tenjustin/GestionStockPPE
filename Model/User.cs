@@ -8,10 +8,10 @@ namespace GestionStock.Model
 {
     internal class User
     {
-        private int id { get; set; }
-        private string username { get; set; }
-        private string password { get; set; }
-        private Role role { get; set; }
+        public int id { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public Role role { get; set; }
 
         public User(string username, string password, Role role)
         {

@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnUserForm = new System.Windows.Forms.Button();
+            this.btnOrderForm = new System.Windows.Forms.Button();
+            this.btnSupplierForm = new System.Windows.Forms.Button();
+            this.btnCategForm = new System.Windows.Forms.Button();
             this.btnProductForm = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -63,53 +63,57 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnUserForm
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(50, 381);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(122, 35);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Utilisateurs";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnUserForm.FlatAppearance.BorderSize = 0;
+            this.btnUserForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserForm.Location = new System.Drawing.Point(50, 381);
+            this.btnUserForm.Name = "btnUserForm";
+            this.btnUserForm.Size = new System.Drawing.Size(122, 35);
+            this.btnUserForm.TabIndex = 4;
+            this.btnUserForm.Text = "Utilisateurs";
+            this.btnUserForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserForm.UseVisualStyleBackColor = true;
+            this.btnUserForm.Click += new System.EventHandler(this.btnUserForm_Click);
             // 
-            // button7
+            // btnOrderForm
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(50, 329);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 35);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Commandes";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnOrderForm.FlatAppearance.BorderSize = 0;
+            this.btnOrderForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderForm.Location = new System.Drawing.Point(50, 329);
+            this.btnOrderForm.Name = "btnOrderForm";
+            this.btnOrderForm.Size = new System.Drawing.Size(122, 35);
+            this.btnOrderForm.TabIndex = 3;
+            this.btnOrderForm.Text = "Commandes";
+            this.btnOrderForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderForm.UseVisualStyleBackColor = true;
+            this.btnOrderForm.Click += new System.EventHandler(this.btnOrderForm_Click);
             // 
-            // button6
+            // btnSupplierForm
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(50, 282);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 35);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Fournisseurs";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSupplierForm.FlatAppearance.BorderSize = 0;
+            this.btnSupplierForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplierForm.Location = new System.Drawing.Point(50, 282);
+            this.btnSupplierForm.Name = "btnSupplierForm";
+            this.btnSupplierForm.Size = new System.Drawing.Size(122, 35);
+            this.btnSupplierForm.TabIndex = 2;
+            this.btnSupplierForm.Text = "Fournisseurs";
+            this.btnSupplierForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSupplierForm.UseVisualStyleBackColor = true;
+            this.btnSupplierForm.Click += new System.EventHandler(this.btnSupplierForm_Click);
             // 
-            // button5
+            // btnCategForm
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(50, 237);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 36);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Catégories";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCategForm.FlatAppearance.BorderSize = 0;
+            this.btnCategForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategForm.Location = new System.Drawing.Point(50, 237);
+            this.btnCategForm.Name = "btnCategForm";
+            this.btnCategForm.Size = new System.Drawing.Size(104, 36);
+            this.btnCategForm.TabIndex = 1;
+            this.btnCategForm.Text = "Catégories";
+            this.btnCategForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategForm.UseVisualStyleBackColor = true;
+            this.btnCategForm.Click += new System.EventHandler(this.btnCategForm_Click);
             // 
             // btnProductForm
             // 
@@ -196,6 +200,7 @@
             this.categoriesList.RowTemplate.Height = 25;
             this.categoriesList.Size = new System.Drawing.Size(811, 323);
             this.categoriesList.TabIndex = 23;
+            this.categoriesList.SelectionChanged += new System.EventHandler(this.categoriesList_SelectionChanged);
             // 
             // label1
             // 
@@ -223,10 +228,10 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnUserForm);
+            this.panel1.Controls.Add(this.btnOrderForm);
+            this.panel1.Controls.Add(this.btnSupplierForm);
+            this.panel1.Controls.Add(this.btnCategForm);
             this.panel1.Controls.Add(this.btnProductForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -281,10 +286,10 @@
         #endregion
 
         private Button button10;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button5;
+        private Button btnUserForm;
+        private Button btnOrderForm;
+        private Button btnSupplierForm;
+        private Button btnCategForm;
         private Button btnProductForm;
         private Button btnDelete;
         private Button btnEdit;

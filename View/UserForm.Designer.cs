@@ -29,26 +29,26 @@
         private void InitializeComponent()
         {
             this.button10 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUserForm = new System.Windows.Forms.Button();
+            this.btnOrderForm = new System.Windows.Forms.Button();
+            this.btnSupplierForm = new System.Windows.Forms.Button();
+            this.btnCategForm = new System.Windows.Forms.Button();
+            this.btnProductForm = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.passwordTB = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Utilisateur = new System.Windows.Forms.Label();
+            this.usersDgv = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.usernameTb = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.roleCb = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDgv)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -66,65 +66,65 @@
             this.button10.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button10.UseVisualStyleBackColor = false;
             // 
-            // button8
+            // btnUserForm
             // 
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Location = new System.Drawing.Point(50, 381);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(122, 35);
-            this.button8.TabIndex = 4;
-            this.button8.Text = "Utilisateurs";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnUserForm.FlatAppearance.BorderSize = 0;
+            this.btnUserForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnUserForm.Location = new System.Drawing.Point(50, 381);
+            this.btnUserForm.Name = "btnUserForm";
+            this.btnUserForm.Size = new System.Drawing.Size(122, 35);
+            this.btnUserForm.TabIndex = 4;
+            this.btnUserForm.Text = "Utilisateurs";
+            this.btnUserForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUserForm.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnOrderForm
             // 
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Location = new System.Drawing.Point(50, 329);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(122, 35);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "Commandes";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnOrderForm.FlatAppearance.BorderSize = 0;
+            this.btnOrderForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnOrderForm.Location = new System.Drawing.Point(50, 329);
+            this.btnOrderForm.Name = "btnOrderForm";
+            this.btnOrderForm.Size = new System.Drawing.Size(122, 35);
+            this.btnOrderForm.TabIndex = 3;
+            this.btnOrderForm.Text = "Commandes";
+            this.btnOrderForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnOrderForm.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnSupplierForm
             // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Location = new System.Drawing.Point(50, 282);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(122, 35);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "Fournisseurs";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnSupplierForm.FlatAppearance.BorderSize = 0;
+            this.btnSupplierForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSupplierForm.Location = new System.Drawing.Point(50, 282);
+            this.btnSupplierForm.Name = "btnSupplierForm";
+            this.btnSupplierForm.Size = new System.Drawing.Size(122, 35);
+            this.btnSupplierForm.TabIndex = 2;
+            this.btnSupplierForm.Text = "Fournisseurs";
+            this.btnSupplierForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSupplierForm.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnCategForm
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Location = new System.Drawing.Point(50, 237);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 36);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Catégories";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnCategForm.FlatAppearance.BorderSize = 0;
+            this.btnCategForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategForm.Location = new System.Drawing.Point(50, 237);
+            this.btnCategForm.Name = "btnCategForm";
+            this.btnCategForm.Size = new System.Drawing.Size(104, 36);
+            this.btnCategForm.TabIndex = 1;
+            this.btnCategForm.Text = "Catégories";
+            this.btnCategForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCategForm.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnProductForm
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Location = new System.Drawing.Point(50, 199);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(104, 23);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Produits";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnProductForm.FlatAppearance.BorderSize = 0;
+            this.btnProductForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProductForm.Location = new System.Drawing.Point(50, 199);
+            this.btnProductForm.Name = "btnProductForm";
+            this.btnProductForm.Size = new System.Drawing.Size(104, 23);
+            this.btnProductForm.TabIndex = 0;
+            this.btnProductForm.Text = "Produits";
+            this.btnProductForm.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProductForm.UseVisualStyleBackColor = true;
             // 
             // label5
             // 
@@ -135,48 +135,48 @@
             this.label5.TabIndex = 73;
             this.label5.Text = "Rôle";
             // 
-            // button3
+            // btnDelete
             // 
-            this.button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(801, 160);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(125, 28);
-            this.button3.TabIndex = 71;
-            this.button3.Text = "Supprimer";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnDelete.FlatAppearance.BorderSize = 0;
+            this.btnDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDelete.Location = new System.Drawing.Point(801, 160);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(125, 28);
+            this.btnDelete.TabIndex = 71;
+            this.btnDelete.Text = "Supprimer";
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnEdit
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Location = new System.Drawing.Point(458, 160);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(125, 28);
-            this.button2.TabIndex = 70;
-            this.button2.Text = "Modifier";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEdit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnEdit.FlatAppearance.BorderSize = 0;
+            this.btnEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEdit.Location = new System.Drawing.Point(458, 160);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(125, 28);
+            this.btnEdit.TabIndex = 70;
+            this.btnEdit.Text = "Modifier";
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnAdd
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(630, 160);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(125, 28);
-            this.button1.TabIndex = 69;
-            this.button1.Text = "Ajouter";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.btnAdd.FlatAppearance.BorderSize = 0;
+            this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAdd.Location = new System.Drawing.Point(630, 160);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(125, 28);
+            this.btnAdd.TabIndex = 69;
+            this.btnAdd.Text = "Ajouter";
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
-            // textBox1
+            // passwordTB
             // 
-            this.textBox1.Location = new System.Drawing.Point(614, 81);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(160, 27);
-            this.textBox1.TabIndex = 67;
+            this.passwordTB.Location = new System.Drawing.Point(614, 81);
+            this.passwordTB.Name = "passwordTB";
+            this.passwordTB.Size = new System.Drawing.Size(160, 27);
+            this.passwordTB.TabIndex = 67;
             // 
             // label3
             // 
@@ -187,23 +187,24 @@
             this.label3.TabIndex = 66;
             this.label3.Text = "Identifiant";
             // 
-            // label2
+            // Utilisateur
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(277, 246);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(102, 19);
-            this.label2.TabIndex = 64;
-            this.label2.Text = "Fournisseurs";
+            this.Utilisateur.AutoSize = true;
+            this.Utilisateur.Location = new System.Drawing.Point(277, 246);
+            this.Utilisateur.Name = "Utilisateur";
+            this.Utilisateur.Size = new System.Drawing.Size(90, 19);
+            this.Utilisateur.TabIndex = 64;
+            this.Utilisateur.Text = "Utilisateurs";
             // 
-            // dataGridView1
+            // usersDgv
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(261, 282);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(811, 323);
-            this.dataGridView1.TabIndex = 63;
+            this.usersDgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersDgv.Location = new System.Drawing.Point(261, 282);
+            this.usersDgv.Name = "usersDgv";
+            this.usersDgv.RowTemplate.Height = 25;
+            this.usersDgv.Size = new System.Drawing.Size(811, 323);
+            this.usersDgv.TabIndex = 63;
+            this.usersDgv.SelectionChanged += new System.EventHandler(this.usersDgv_SelectionChanged);
             // 
             // panel2
             // 
@@ -231,11 +232,11 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button5);
-            this.panel1.Controls.Add(this.button4);
+            this.panel1.Controls.Add(this.btnUserForm);
+            this.panel1.Controls.Add(this.btnOrderForm);
+            this.panel1.Controls.Add(this.btnSupplierForm);
+            this.panel1.Controls.Add(this.btnCategForm);
+            this.panel1.Controls.Add(this.btnProductForm);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -259,13 +260,13 @@
             this.usernameTb.Size = new System.Drawing.Size(176, 27);
             this.usernameTb.TabIndex = 65;
             // 
-            // comboBox1
+            // roleCb
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(801, 81);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(151, 27);
-            this.comboBox1.TabIndex = 74;
+            this.roleCb.FormattingEnabled = true;
+            this.roleCb.Location = new System.Drawing.Point(801, 81);
+            this.roleCb.Name = "roleCb";
+            this.roleCb.Size = new System.Drawing.Size(151, 27);
+            this.roleCb.TabIndex = 74;
             // 
             // UserForm
             // 
@@ -273,15 +274,15 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1084, 617);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.roleCb);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.btnDelete);
+            this.Controls.Add(this.btnEdit);
+            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.passwordTB);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.Utilisateur);
+            this.Controls.Add(this.usersDgv);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label4);
@@ -290,8 +291,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UserForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UserForm";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersDgv)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -303,24 +305,24 @@
         #endregion
 
         private Button button10;
-        private Button button8;
-        private Button button7;
-        private Button button6;
-        private Button button5;
-        private Button button4;
+        private Button btnUserForm;
+        private Button btnOrderForm;
+        private Button btnSupplierForm;
+        private Button btnCategForm;
+        private Button btnProductForm;
         private Label label5;
-        private Button button3;
-        private Button button2;
-        private Button button1;
-        private TextBox textBox1;
+        private Button btnDelete;
+        private Button btnEdit;
+        private Button btnAdd;
+        private TextBox passwordTB;
         private Label label3;
-        private Label label2;
-        private DataGridView dataGridView1;
+        private Label Utilisateur;
+        private DataGridView usersDgv;
         private Panel panel2;
         private Label label1;
         private Panel panel1;
         private Label label4;
         private TextBox usernameTb;
-        private ComboBox comboBox1;
+        private ComboBox roleCb;
     }
 }

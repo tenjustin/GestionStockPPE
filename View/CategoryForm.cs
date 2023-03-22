@@ -17,13 +17,17 @@ namespace GestionStock
         public CategoryForm()
         {
             InitializeComponent();
-            DBCategories dbc = new DBCategories();
+            CategoryController dbc = new CategoryController();
             categoriesList.DataSource = dbc.TableAllCategories();
+            if (categoriesList.SelectedRows.Count > 0 )
+            {
+                categoryNameTB.Text = (string)categoriesList.SelectedRows[0].Cells["name"].Value;
+            }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            DBCategories dbc = new DBCategories();
+            CategoryController dbc = new CategoryController();
             Viewlib vlib = new Viewlib();
             dbc.AddCategorie(categoryNameTB.Text);
             vlib.RefreshDataGridViewCategory(categoriesList);
@@ -36,7 +40,7 @@ namespace GestionStock
             {
                 int categoryId = (int)categoriesList.SelectedRows[0].Cells["id"].Value;
 
-                DBCategories categoryManager = new DBCategories();
+                CategoryController categoryManager = new CategoryController();
                 bool success = categoryManager.DeleteCategoryById(categoryId);
 
                 if (success)
@@ -69,7 +73,7 @@ namespace GestionStock
 
                 if (!string.IsNullOrEmpty(newCategoryName))
                 {
-                    DBCategories categoryManager = new DBCategories();
+                    CategoryController categoryManager = new CategoryController();
                     bool success = categoryManager.UpdateCategoryById(categoryId, newCategoryName);
 
                     if (success)
@@ -110,6 +114,76 @@ namespace GestionStock
 
             // Ferme le formulaire actuel
             this.Close();
+        }
+
+        private void btnCategForm_Click(object sender, EventArgs e)
+        {
+            CategoryForm nextForm = new CategoryForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void btnSupplierForm_Click(object sender, EventArgs e)
+        {
+            SupplierForm nextForm = new SupplierForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void btnOrderForm_Click(object sender, EventArgs e)
+        {
+            OrdersForm nextForm = new OrdersForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void btnUserForm_Click(object sender, EventArgs e)
+        {
+            UserForm nextForm = new UserForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void categoriesList_SelectionChanged(object sender, EventArgs e)
+        {
+            if (categoriesList.SelectedRows.Count > 0)
+            {
+                DataGridViewRow row = categoriesList.SelectedRows[0];
+                string catName = row.Cells["name"].Value.ToString();
+                categoryNameTB.Text = catName;
+            }
         }
     }
 }
