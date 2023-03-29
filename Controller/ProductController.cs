@@ -115,7 +115,7 @@ namespace GestionStock.Controller
         public DataTable TableAllProducts()
         {
             // Définir la commande SQL pour sélectionner tous les produits
-            string sql = "SELECT * FROM products";
+            string sql = "SELECT p.id, p.name, p.description, p.price, p.quantity, c.name AS category_name, s.name AS supplier_name FROM [dbo].[products] AS p INNER JOIN [dbo].[categories] AS c ON p.category_id = c.id INNER JOIN [dbo].[suppliers] AS s ON p.supplier_id = s.id";
 
             // Créer une nouvelle connexion à la base de données
             using (SqlConnection connection = new DBConnexion().GetConnection())

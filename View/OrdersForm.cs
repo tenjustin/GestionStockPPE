@@ -148,5 +148,20 @@ namespace GestionStock
                 orderDateDb.Value = (DateTime)row.Cells["order_date"].Value;
             }
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Connexion nextForm = new Connexion();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
     }
 }

@@ -34,8 +34,11 @@ namespace GestionStock
         {
             if (productDgv.SelectedRows.Count > 0)
             {
-                nameTb.Text = productDgv.SelectedRows[0].Cells["name"].ToString();
-                priceTb.Text = productDgv.SelectedRows[0].Cells["price"].ToString();
+                nameTb.Text = productDgv.SelectedRows[0].Cells["name"].Value.ToString();
+                priceTb.Text = productDgv.SelectedRows[0].Cells["price"].Value.ToString();
+                stockCb.Text = productDgv.SelectedRows[0].Cells["quantity"].Value.ToString();
+                categoryCb.Text = productDgv.SelectedRows[0].Cells["category_name"].Value.ToString();
+                supplierCb.Text = productDgv.SelectedRows[0].Cells["supplier_name"].Value.ToString();
             }
         }
 
@@ -146,6 +149,21 @@ namespace GestionStock
         private void btnUserForm_Click(object sender, EventArgs e)
         {
             UserForm nextForm = new UserForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Connexion nextForm = new Connexion();
 
             // Crée un nouveau thread pour exécuter le nouveau formulaire
             Thread newFormThread = new Thread(() => Program.RunForm(nextForm));

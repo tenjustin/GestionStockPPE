@@ -32,6 +32,7 @@ namespace GestionStock
                 DataGridViewRow row = usersDgv.SelectedRows[0];
                 usernameTb.Text = (string)row.Cells["username"].Value;
                 passwordTB.Text = (string)row.Cells["password"].Value;
+                roleCb.Text = (string)row.Cells["role_name"].Value;
             }
         }
 
@@ -112,6 +113,21 @@ namespace GestionStock
         private void btnUserForm_Click(object sender, EventArgs e)
         {
             UserForm nextForm = new UserForm();
+
+            // Crée un nouveau thread pour exécuter le nouveau formulaire
+            Thread newFormThread = new Thread(() => Program.RunForm(nextForm));
+
+            // Démarre le nouveau thread
+            newFormThread.SetApartmentState(ApartmentState.STA);
+            newFormThread.Start();
+
+            // Ferme le formulaire actuel
+            this.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            Connexion nextForm = new Connexion();
 
             // Crée un nouveau thread pour exécuter le nouveau formulaire
             Thread newFormThread = new Thread(() => Program.RunForm(nextForm));

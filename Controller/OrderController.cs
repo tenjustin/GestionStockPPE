@@ -51,8 +51,7 @@ namespace GestionStock.Controller
             {
                 connection.Open();
                 string query = @"SELECT o.id, o.order_date, o.quantity, o.unit_price,
-                                    p.id AS product_id, p.name AS product_name, p.description AS product_description,
-                                    p.price AS product_price, p.quantity AS product_quantity
+                                    p.name AS product_name
                              FROM [dbo].[orders] AS o
                              INNER JOIN [dbo].[products] AS p ON o.product_id = p.id";
 
