@@ -38,7 +38,22 @@ namespace GestionStock
                 priceTb.Text = productDgv.SelectedRows[0].Cells["price"].Value.ToString();
                 stockCb.Text = productDgv.SelectedRows[0].Cells["quantity"].Value.ToString();
                 categoryCb.Text = productDgv.SelectedRows[0].Cells["category_name"].Value.ToString();
-                supplierCb.Text = productDgv.SelectedRows[0].Cells["supplier_name"].Value.ToString();
+                supplierCb.Text = productDgv.SelectedRows[0].Cells["supplier00" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "" +
+                    "_name"].Value.ToString();
             }
         }
 
