@@ -13,6 +13,7 @@ namespace GestionStock.Controller
     internal class UserController
     {
         ConnexionController connexionController = new ConnexionController();
+
         public DataTable TableAllUsers()
         {
             DataTable users = new DataTable();
