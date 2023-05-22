@@ -101,5 +101,29 @@ namespace GestionStock.Model
         {
             this.quantity= stock;
         }
+
+        public void addStock(Order order)
+        {
+            using(SqlConnection connection = new DBConnexion().GetConnection())
+            {
+                connection.Open();
+                string query = "Update products set quantity = @quantity where id=@id";
+                using(SqlCommand command = new SqlCommand(query, connection))
+                {
+                    int stock = order.product.GetStock() + order.quantity;
+                    command.Parameters.AddWithValue("@quantity", stock);
+                    command.Parameters.AddWithValue("@id", order.product.id);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch(SqlException ex)
+                    {
+                        MessageBox.Show("Erreur update stock : " + ex);
+                    }
+                }
+            }
+        }
     }
 }

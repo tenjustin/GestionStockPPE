@@ -60,6 +60,9 @@ namespace GestionStock
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
+            Product product = pdc.SelectProductsByName((string)orderDgv.SelectedRows[0].Cells["product_name"].Value);
+            Order order = new Order(orderDateDb.Value, product, (int)qteNb.Value, product.price);
+            product.addStock(order);
             orderController.DeleteCommande((int)orderDgv.SelectedRows[0].Cells["id"].Value);
             vlib.RefreshDataGridOrder(orderDgv);
         }
