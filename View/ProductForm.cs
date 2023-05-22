@@ -72,8 +72,13 @@ namespace GestionStock
             Supplier supplier = suppliersController.GetSupplierByName(supplierCb.Text);
             double.TryParse(priceTb.Text, out double price);
             int.TryParse(stockCb.Text, out int quantity);
-            Product product = new Product(nameTb.Text, price, quantity, category, supplier);
-            pdc.UpdateProduct(product);
+            Product product = pdc.SelectProductsByName(nameTb.Text);
+            product.SetStock(quantity);
+            product.price = price;
+            product.name = nameTb.Text;
+            product.category = category;
+            product.supplier = supplier;
+            if (!pdc.UpdateProduct(product)) { MessageBox.Show("Erreur Maj Produit"); }
             vlib.RefreshDataGridProduct(productDgv);
         }
 

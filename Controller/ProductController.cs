@@ -193,38 +193,35 @@ namespace GestionStock.Controller
 
         public bool UpdateProduct(Product product)
         {
-            // Définir la commande SQL pour mettre à jour un produit dans la base de données
-            string sql = "UPDATE products SET name = @name, description = @description, category_id = @category_id, supplier_id = @supplier_id, price = @price, quantity = @quantity WHERE id = @id";
-
             // Créer une nouvelle connexion à la base de données
             using (SqlConnection connection = new DBConnexion().GetConnection())
             {
-                try
+                // Ouvrir la connexion à la base de données
+                connection.Open();
+                string sql = "UPDATE products SET name = @name, category_id = @category_id, supplier_id = @supplier_id, price = @price, quantity = @quantity WHERE id = @id";
+
+                // Créer une nouvelle commande SQL avec la requête SQL et la connexion
+                using (SqlCommand command = new SqlCommand(sql, connection))
                 {
-                    // Ouvrir la connexion à la base de données
-                    connection.Open();
+                    // Ajouter les paramètres de la commande SQL en utilisant les propriétés du produit
+                    command.Parameters.AddWithValue("@name", product.name);
+                    command.Parameters.AddWithValue("@category_id", product.category.id);
+                    command.Parameters.AddWithValue("@supplier_id", product.supplier.id);
+                    command.Parameters.AddWithValue("@price", product.price);
+                    command.Parameters.AddWithValue("@quantity", product.quantity);
+                    command.Parameters.AddWithValue("@id", product.id);
 
-                    // Créer une nouvelle commande SQL avec la requête SQL et la connexion
-                    using (SqlCommand command = new SqlCommand(sql, connection))
+                    // Exécuter la commande SQL et retourner true si le produit a été mis à jour, sinon false
+                    try
                     {
-                        // Ajouter les paramètres de la commande SQL en utilisant les propriétés du produit
-                        command.Parameters.AddWithValue("@id", product.id);
-                        command.Parameters.AddWithValue("@name", product.name);
-                        command.Parameters.AddWithValue("@category_id", product.category.id);
-                        command.Parameters.AddWithValue("@supplier_id", product.supplier.id);
-                        command.Parameters.AddWithValue("@price", product.price);
-                        command.Parameters.AddWithValue("@quantity", product.quantity);
-
-                        // Exécuter la commande SQL et retourner true si le produit a été mis à jour, sinon false
                         int rowsAffected = command.ExecuteNonQuery();
                         return (rowsAffected > 0);
                     }
-                }
-                catch (Exception ex)
-                {
-                    // Gérer l'exception
-                    MessageBox.Show("Une erreur s'est produite lors de la mise à jour du produit : " + ex.Message);
-                    return false;
+                    catch(SqlException ex)
+                    {
+                        MessageBox.Show("Echec de la maj du produit" + ex.Message);
+                        return false;
+                    }
                 }
             }
         }

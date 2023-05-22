@@ -32,6 +32,7 @@ namespace GestionStock
             Product product = pdc.SelectProductsByName(productName);
             Order order = new Order(orderDateDb.Value, product, (int)qteNb.Value, product.price);
             orderController.AddOrder(order);
+            product.updateStock(order);
             vlib.RefreshDataGridOrder(orderDgv);
         }
 

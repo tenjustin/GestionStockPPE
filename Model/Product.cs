@@ -1,5 +1,7 @@
-﻿using System;
+﻿using GestionStock.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -50,6 +52,54 @@ namespace GestionStock.Model
         public override string ToString()
         {
             return name;
+        }
+
+        public int GetStock()
+        {
+            using(SqlConnection connection = new DBConnexion().GetConnection())
+            {
+                connection.Open();
+                string query = "select quantity from products where id=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", this.id);
+
+                    int stock = (int)command.ExecuteScalar();
+                    return stock;
+                }
+            } 
+        }
+
+        public void updateStock(Order order)
+        {
+            using(SqlConnection connection = new DBConnexion().GetConnection())
+            {
+                connection.Open();
+                string query = "update products set quantity=@quantity where id=@id";
+                using(SqlCommand command = new SqlCommand(query, connection))
+                {
+                    int stock = order.product.GetStock() - order.quantity;
+                    command.Parameters.AddWithValue("@quantity", stock);
+                    command.Parameters.AddWithValue("@id", order.product.id);
+
+                    try
+                    {
+                        int affectedRows = command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException ex)
+                    {
+                        MessageBox.Show("Echec de l'ajout de la categorie" + ex.Message);
+
+                    }
+                }
+
+            }
+        }
+
+        public void SetStock(int stock)
+        {
+            this.quantity= stock;
         }
     }
 }

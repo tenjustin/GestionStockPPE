@@ -9,6 +9,7 @@ namespace GestionStock.DAL
 {
     internal class DBConnexion
     {
+        //Chaine de caractère à adapter à votre base de données
         private string connectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\Justin\BDD\GestionStockPPE.mdf;Integrated Security=True;Connect Timeout=30";
 
         public SqlConnection GetConnection()
