@@ -97,11 +97,6 @@ namespace GestionStock.Model
             }
         }
 
-        public void SetStock(int stock)
-        {
-            this.quantity= stock;
-        }
-
         public void addStock(Order order)
         {
             using(SqlConnection connection = new DBConnexion().GetConnection())

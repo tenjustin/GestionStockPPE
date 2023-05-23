@@ -19,10 +19,9 @@ namespace GestionStock
             InitializeComponent();
             CategoryController dbc = new CategoryController();
             categoriesList.DataSource = dbc.TableAllCategories();
-            if (categoriesList.SelectedRows.Count > 0 )
-            {
-                categoryNameTB.Text = (string)categoriesList.SelectedRows[0].Cells["name"].Value;
-            }
+
+            categoriesList.Columns["id"].Visible = false;
+            categoriesList.Columns["name"].HeaderText = "Nom";
         }
 
         private void button1_Click(object sender, EventArgs e)

@@ -80,8 +80,8 @@ namespace GestionStock.Controller
                                 string description = dataTable.Rows[0]["description"].ToString();
                                 int categoryId = (int)dataTable.Rows[0]["category_id"];
                                 int supplierId = (int)dataTable.Rows[0]["supplier_id"];
-                                decimal priceD = (decimal)dataTable.Rows[0]["price"];
-                                double price = decimal.ToDouble(priceD);
+                                
+                                double price = (double)dataTable.Rows[0]["price"];
                                 int quantity = (int)dataTable.Rows[0]["quantity"];
 
                                 // Récupérer les données de la catégorie et du fournisseur associés au produit

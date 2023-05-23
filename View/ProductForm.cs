@@ -16,6 +16,7 @@ namespace GestionStock
 {
     public partial class ProductForm : Form
     {
+        //Création des controller
         ProductController pdc = new ProductController();
         CategoryController categoryController = new CategoryController();
         SuppliersController suppliersController = new SuppliersController();
@@ -23,11 +24,19 @@ namespace GestionStock
         public ProductForm()
         {
             InitializeComponent();
+            //Mise en place des CB et de la DGV
             productDgv.DataSource = pdc.TableAllProducts();
             categoryCb.DataSource = categoryController.SelectAllCategoryNames();
             supplierCb.DataSource = suppliersController.SelectAllSuppliersNames();
-            triCatCb.DataSource = categoryController.SelectAllCategoryNames();
-            triSupCb.DataSource = suppliersController.SelectAllSuppliersNames();
+
+            //Design de la DGV
+            productDgv.Columns["id"].Visible = false;
+            productDgv.Columns["name"].HeaderText = "Nom";
+            productDgv.Columns["description"].Visible = false;
+            productDgv.Columns["price"].HeaderText = "Prix";
+            productDgv.Columns["quantity"].HeaderText = "Stock";
+            productDgv.Columns["category_name"].HeaderText = "Catégorie";
+            productDgv.Columns["supplier_name"].HeaderText = "Fournisseur";
         }
 
         private void productDgv_SelectionChanged(object sender, EventArgs e)
@@ -73,7 +82,7 @@ namespace GestionStock
             double.TryParse(priceTb.Text, out double price);
             int.TryParse(stockCb.Text, out int quantity);
             Product product = pdc.SelectProductsByName(nameTb.Text);
-            product.SetStock(quantity);
+            product.quantity = quantity;
             product.price = price;
             product.name = nameTb.Text;
             product.category = category;

@@ -21,6 +21,11 @@ namespace GestionStock
         {
             InitializeComponent();
             supplierDgv.DataSource = spc.TableAllSuppliers();
+
+            supplierDgv.Columns["id"].Visible = false;
+            supplierDgv.Columns["name"].HeaderText = "Nom";
+            supplierDgv.Columns["address"].HeaderText = "Adresse";
+            supplierDgv.Columns["phone_number"].HeaderText = "Numéro de Téléphone";
         }
 
         private void supplierDgv_SelectionChanged(object sender, EventArgs e)

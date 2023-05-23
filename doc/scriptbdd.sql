@@ -61,3 +61,25 @@ CREATE TABLE [dbo].[users] (
     CONSTRAINT [user_role] FOREIGN KEY ([role_id]) REFERENCES [dbo].[roles] ([id])
 );
 INSERT INTO orders (username, password, role_id) VALUES ('directrice', 'directrice', '1'), ('employe', 'employe', '2');
+
+--Declencheur pour maj des commandes (maj du stock auto)
+CREATE TRIGGER majStockUpdateOrder ON orders AFTER UPDATE AS
+BEGIN
+	Declare @deltaQty INT
+	declare @oldQty INT
+	declare @newQty INT
+	declare @qtyUpdt INT
+	set @qtyUpdt = (Select quantity from products where id=(Select product_id from inserted))
+	set @oldQty = (Select quantity from deleted)
+	set @newQty = (Select quantity from inserted)
+	IF (@oldQty >= @newQty)
+	BEGIN
+		SET @deltaQty = @oldQty - @newQty
+		Update products SET quantity = @qtyUpdt + @deltaQty Where id = (Select product_id from inserted)	
+	END
+	ELSE 
+	BEGIN
+		SET @deltaQty = @newQty - @oldQty;
+		Update products SET quantity = @qtyUpdt - @deltaQty Where id = (Select product_id from inserted)
+	END
+END
